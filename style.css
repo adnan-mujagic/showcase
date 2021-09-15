@@ -247,7 +247,7 @@ body {
 }
 
 .services h1 {
-  color: orange;
+  color: crimson;
   font-size: 40px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -260,10 +260,9 @@ body {
 }
 
 .service {
-  padding: 20px;
+  height: 200px;
   border-radius: 10px;
   border: 1px solid turquoise;
-  overflow: hidden;
   position: relative;
 }
 
@@ -271,6 +270,11 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
 }
 
 .service .icon i {
@@ -279,6 +283,11 @@ body {
 }
 
 .service .description {
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 24px;
   color: rgb(150, 150, 150);
   text-align: center;
@@ -293,9 +302,87 @@ body {
   box-shadow: 5px 5px 20px rgba(32, 32, 32, 0.212);
   border-radius: 50% 50% 65% 35% / 46% 41% 59% 54%;
   z-index: -10;
-
   animation: bubbling 10s infinite;
 }
+
+.bubble-container {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-details {
+  color: rgb(32, 32, 32);
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  bottom: 0%;
+  transform: translateY(100%);
+  padding: 20px;
+}
+
+.service:hover {
+  cursor: pointer;
+}
+
+.service:hover .icon {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.8s;
+}
+
+.service:hover .description {
+  top: 100px;
+  transform: translate(-50%, -50%);
+  transition: 0.8 ease-in-out;
+}
+
+.service:hover .service-details {
+  opacity: 1;
+  visibility: visible;
+  bottom: 0px;
+  transform: translateY(0%);
+  border-top: 1px solid turquoise;
+  transition: 0.8s;
+}
+
+.footer {
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid lightgray;
+}
+
+.footer a {
+  text-decoration: none;
+  color: crimson;
+}
+
+.footer a i {
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.footer a i:hover {
+  transform: rotate(360deg);
+  transition: 0.8s;
+}
+
+@keyframes uprise {
+  0% {
+  }
+  100% {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
 @keyframes rotate-fade-in {
   0% {
     transform: scale(0%);
@@ -380,6 +467,10 @@ body {
 
   .introduction {
     flex-direction: column;
+  }
+
+  .service {
+    margin-bottom: 36px;
   }
 }
 
