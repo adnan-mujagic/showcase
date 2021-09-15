@@ -1,0 +1,399 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.x-shape {
+  transform: rotate(45deg);
+  height: 24px;
+  width: 64px;
+  background: orchid;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50px;
+  left: 30px;
+  animation: rotate-fade-in 4s 1;
+}
+
+.header-title {
+  font-size: 100px;
+  color: white;
+  position: absolute;
+  top: 70%;
+  transform: translateY(-50%);
+  font-family: "Roboto", sans-serif;
+  -webkit-text-stroke: 1px rgb(100, 100, 100); /* width and color */
+  background-color: white;
+  border-radius: 0 20px 20px 0;
+  padding: 20px;
+  animation: header-drop-in 4s 1;
+  text-align: center;
+}
+
+.shape-container {
+  height: 100vh;
+}
+
+.x-shape:nth-child(2) {
+  background-color: yellow;
+  top: 60px;
+  left: calc(100vw - 100px);
+}
+
+.x-shape:nth-child(2) div {
+  background-color: yellow;
+}
+
+.x-shape:nth-child(3) {
+  background-color: turquoise;
+  height: 48px;
+  width: 128px;
+  top: 180px;
+  left: 150px;
+}
+
+.x-shape:nth-child(3) div {
+  background-color: turquoise;
+  height: 48px;
+  width: 128px;
+}
+
+.x-shape:nth-child(4) {
+  background-color: crimson;
+  height: 70px;
+  width: 210px;
+  top: 300px;
+  left: auto;
+  right: 100px;
+}
+
+.x-shape:nth-child(4) div {
+  background-color: crimson;
+  height: 70px;
+  width: 210px;
+}
+
+.vertical-line {
+  height: 24px;
+  width: 64px;
+  background-color: orchid;
+  transform: rotate(90deg);
+}
+
+.hide-border {
+  height: 48px;
+  width: 48px;
+  background-color: slateblue;
+}
+
+.triangle {
+  background: orange;
+  position: absolute;
+  top: 300px;
+  left: 40px;
+  height: 80px;
+  width: 80px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 90%);
+  animation: trangle-fade-in 2s 1;
+}
+
+.circle {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  background: chartreuse;
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  animation: circle-drop-in 4s 1;
+}
+
+.x-to-chevron {
+  height: 70px;
+  width: 70px;
+  clip-path: polygon(
+    20% 0%,
+    0% 20%,
+    30% 50%,
+    0% 80%,
+    20% 100%,
+    50% 70%,
+    50% 70%,
+    70% 50%,
+    70% 50%,
+    70% 50%,
+    50% 30%,
+    50% 30%
+  );
+  background-color: black;
+  animation: turn-to-chevron 3s 1;
+}
+
+.introduction {
+  margin: 20px auto 20px auto;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.profile-card {
+  position: relative;
+  flex: 0.4;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 20px black;
+  display: flex;
+  overflow: hidden;
+  max-width: 500px;
+}
+
+.img-container {
+  height: 250px;
+  width: 250px;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  overflow: hidden;
+  margin-bottom: 10px;
+  background-image: url("imgs/userpic.jpg");
+  background-size: cover;
+  margin-right: 20px;
+  flex: 0.5;
+}
+
+.details {
+  flex: 0.5;
+}
+
+.profile-card .name {
+  display: flex;
+
+  font-size: 25px;
+  color: crimson;
+  padding-bottom: 10px;
+  border-bottom: 1px solid lightgray;
+  margin-top: 10px;
+}
+
+.name i {
+  margin-right: 10px;
+  font-size: 25px;
+  color: rgb(150, 150, 150);
+}
+
+.profile-card .title {
+  padding-top: 10px;
+  font-size: 15px;
+  color: rgb(32, 32, 32);
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.title i {
+  margin-right: 10px;
+  color: rgb(150, 150, 150);
+}
+
+.date-of-birth {
+  display: flex;
+  font-size: 15px;
+  color: rgb(32, 32, 32);
+}
+
+.home {
+  margin-top: 10px;
+  display: flex;
+  font-size: 15px;
+  color: rgb(32, 32, 32);
+}
+
+.home i {
+  margin-right: 10px;
+  color: rgb(150, 150, 150);
+}
+
+.date-of-birth i {
+  color: rgb(150, 150, 150);
+
+  margin-right: 10px;
+}
+
+.about {
+  flex: 0.6;
+  max-width: 900px;
+  margin-right: 20px;
+}
+
+.about h1 {
+  font-size: 80px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: turquoise;
+}
+
+.about p {
+  font-size: 24px;
+  color: rgb(100, 100, 100);
+}
+
+.services {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.services h1 {
+  color: orange;
+  font-size: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.services-container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.service {
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid turquoise;
+  overflow: hidden;
+  position: relative;
+}
+
+.service .icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.service .icon i {
+  font-size: 100px;
+  color: turquoise;
+}
+
+.service .description {
+  font-size: 24px;
+  color: rgb(150, 150, 150);
+  text-align: center;
+}
+
+.service .bubble {
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  top: 0;
+  left: 0;
+  box-shadow: 5px 5px 20px rgba(32, 32, 32, 0.212);
+  border-radius: 50% 50% 65% 35% / 46% 41% 59% 54%;
+  z-index: -10;
+
+  animation: bubbling 10s infinite;
+}
+@keyframes rotate-fade-in {
+  0% {
+    transform: scale(0%);
+  }
+
+  100% {
+    transform: scale(100%) rotate(315deg);
+  }
+}
+
+@keyframes bubbling {
+  0% {
+    border-radius: 50% 50% 65% 35% / 46% 41% 59% 54%;
+  }
+  30% {
+    left: 100px;
+    top: 30px;
+    border-radius: 38% 62% 45% 55% / 49% 54% 46% 51%;
+  }
+  60% {
+    top: 0;
+    left: 300px;
+    border-radius: 72% 28% 60% 40% / 34% 58% 42% 66%;
+  }
+}
+
+@keyframes trangle-fade-in {
+  0% {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 90%);
+  }
+
+  30% {
+    clip-path: polygon(76% 0, 0 90%, 0 0);
+  }
+
+  40% {
+    clip-path: polygon(76% 0, 85% 98%, 0 0);
+  }
+
+  50% {
+    clip-path: polygon(0 99%, 85% 98%, 0 0);
+  }
+}
+
+@keyframes turn-to-chevron {
+  10% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes header-drop-in {
+  from {
+    left: -1000px;
+  }
+
+  to {
+    left: 0px;
+  }
+}
+
+@keyframes circle-drop-in {
+  from {
+    right: 400px;
+    top: -120px;
+    transform: scale(0%);
+  }
+  to {
+    right: 100px;
+    top: 100px;
+    transform: scale(100%);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header-title {
+    font-size: 80px;
+    text-align: left;
+  }
+
+  .introduction {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .img-container {
+    height: 150px;
+    width: 150px;
+  }
+
+  .about h1 {
+    font-size: 52px;
+  }
+
+  .about p {
+    font-size: 20px;
+  }
+}
