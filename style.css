@@ -315,6 +315,7 @@ body {
 }
 
 .service-details {
+  font-size: 12px;
   color: rgb(32, 32, 32);
   position: absolute;
   visibility: hidden;
@@ -480,11 +481,29 @@ body {
     width: 150px;
   }
 
+  .header-title {
+    font-size: 40px;
+    top: 80%;
+  }
+
   .about h1 {
     font-size: 52px;
   }
 
   .about p {
     font-size: 20px;
+  }
+
+  .profile-card {
+    flex-direction: column;
+  }
+
+  .img-container {
+    position: relative;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-height: 250px;
+    min-width: 250px;
   }
 }
