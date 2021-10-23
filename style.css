@@ -223,7 +223,26 @@ body {
 .main-info {
   font-size: 32px;
   font-weight: bold;
-  color: rgba(183, 59, 255, 1);
+  width: fit-content;
+  background: rgb(255, 36, 247);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(255, 36, 247, 1) 24%,
+    rgba(183, 59, 255, 1) 89%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(255, 36, 247, 1) 24%,
+    rgba(183, 59, 255, 1) 89%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(255, 36, 247, 1) 24%,
+    rgba(183, 59, 255, 1) 89%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 20px;
 }
 
@@ -256,10 +275,10 @@ body {
 }
 
 .footer {
-  height: 7vh;
+  margin-top: 20px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
-  border-top: 1px solid lightgray;
 }
 
 .footer a {
@@ -267,7 +286,7 @@ body {
 }
 
 .footer a i {
-  margin-left: 20px;
+  margin-right: 20px;
   font-size: 20px;
   color: rgb(150, 150, 150);
 }
