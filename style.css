@@ -399,11 +399,6 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
-  .header-title {
-    font-size: 40px;
-    text-align: left;
-  }
-
   .introduction {
     flex-direction: column;
   }
@@ -418,11 +413,6 @@ body {
 
   .skill {
     flex-direction: column;
-  }
-
-  .header-title {
-    font-size: 40px;
-    top: 80%;
   }
 
   .about h1 {
