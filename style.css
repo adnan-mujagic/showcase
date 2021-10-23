@@ -19,29 +19,48 @@ body {
   animation: rotate-fade-in 4s 1;
 }
 
+.header {
+  position: relative;
+}
+
 .header-title {
-  font-size: 100px;
-  color: white;
+  font-size: 40px;
+  background: rgb(255, 36, 247);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(255, 36, 247, 1) 24%,
+    rgba(183, 59, 255, 1) 89%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(255, 36, 247, 1) 24%,
+    rgba(183, 59, 255, 1) 89%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(255, 36, 247, 1) 24%,
+    rgba(183, 59, 255, 1) 89%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
   position: absolute;
-  top: 70%;
-  transform: translateY(-50%);
+  bottom: 20px;
   font-family: "Roboto", sans-serif;
-  -webkit-text-stroke: 1px rgb(100, 100, 100); /* width and color */
-  background-color: white;
-  border-radius: 0 20px 20px 0;
-  padding: 20px;
   animation: header-drop-in 4s 1;
   text-align: center;
 }
 
 .shape-container {
   height: 100vh;
+  border-bottom: 1px solid lightgray;
 }
 
 .x-shape:nth-child(2) {
   background-color: yellow;
   top: 60px;
-  left: calc(100vw - 100px);
+  left: calc(200px);
 }
 
 .x-shape:nth-child(2) div {
@@ -60,21 +79,6 @@ body {
   background-color: turquoise;
   height: 48px;
   width: 128px;
-}
-
-.x-shape:nth-child(4) {
-  background-color: crimson;
-  height: 70px;
-  width: 210px;
-  top: 300px;
-  left: auto;
-  right: 100px;
-}
-
-.x-shape:nth-child(4) div {
-  background-color: crimson;
-  height: 70px;
-  width: 210px;
 }
 
 .vertical-line {
@@ -134,54 +138,48 @@ body {
 }
 
 .introduction {
-  margin: 20px auto 20px auto;
-  display: flex;
-  justify-content: space-between;
-  padding-left: 20px;
-  padding-right: 20px;
+  background: orange;
 }
 
 .profile-card {
+  margin-top: 20px;
   position: relative;
-  flex: 0.4;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 5px 5px 20px black;
-  display: flex;
   overflow: hidden;
-  max-width: 500px;
+  margin-bottom: 20px;
 }
 
 .img-container {
   height: 250px;
   width: 250px;
   border-radius: 10px;
-  border: 1px solid lightgray;
   overflow: hidden;
   margin-bottom: 10px;
   background-image: url("imgs/userpic.jpg");
   background-size: cover;
   margin-right: 20px;
-  flex: 0.5;
 }
 
-.details {
-  flex: 0.5;
+.margin {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .profile-card .name {
   display: flex;
-
+  align-items: center;
   font-size: 25px;
-  color: crimson;
+  color: rgb(32, 32, 32);
   padding-bottom: 10px;
   border-bottom: 1px solid lightgray;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .name i {
   margin-right: 10px;
-  font-size: 25px;
+  font-size: 32px;
   color: rgb(150, 150, 150);
 }
 
@@ -222,133 +220,39 @@ body {
   margin-right: 10px;
 }
 
-.about {
-  flex: 0.6;
-  max-width: 900px;
-  margin-right: 20px;
-}
-
-.about h1 {
-  font-size: 80px;
-  margin-top: 20px;
+.main-info {
+  font-size: 32px;
+  font-weight: bold;
+  color: rgba(183, 59, 255, 1);
   margin-bottom: 20px;
-  color: turquoise;
-}
-
-.about p {
-  font-size: 24px;
-  color: rgb(100, 100, 100);
 }
 
 .services {
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-}
-
-.services h1 {
-  color: crimson;
-  font-size: 40px;
   margin-top: 20px;
-  margin-bottom: 20px;
 }
 
-.services-container {
+.service-cards {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
-.service {
-  height: 200px;
-  border-radius: 10px;
-  border: 1px solid turquoise;
-  position: relative;
-}
-
-.service .icon {
-  display: flex;
-  justify-content: center;
+.service-card {
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 24px 0px rgba(33, 33, 33, 0.274);
   margin-bottom: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 100;
 }
 
-.service .icon i {
-  font-size: 100px;
-  color: turquoise;
+.service-title {
+  margin-bottom: 10px;
+  font-size: 20px;
 }
 
-.service .description {
-  position: absolute;
-  width: 100%;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 24px;
-  color: rgb(150, 150, 150);
-  text-align: center;
-}
-
-.service .bubble {
-  position: absolute;
-  height: 300px;
-  width: 300px;
-  top: 0;
-  left: 0;
-  box-shadow: 5px 5px 20px rgba(32, 32, 32, 0.212);
-  border-radius: 50% 50% 65% 35% / 46% 41% 59% 54%;
-  z-index: -10;
-  animation: bubbling 10s infinite;
-}
-
-.bubble-container {
-  height: 100%;
-  width: 100%;
-  border-radius: 10px;
-  background: transparent;
-  position: relative;
-  overflow: hidden;
-}
-
-.service-details {
-  font-size: 12px;
-  color: rgb(32, 32, 32);
-  position: absolute;
-  visibility: hidden;
-  opacity: 0;
-  bottom: 0%;
-  transform: translateY(100%);
-  padding: 20px;
-}
-
-.service:hover {
-  cursor: pointer;
-}
-
-.service:hover .icon {
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: 0.8s;
-}
-
-.service:hover .description {
-  top: 100px;
-  transform: translate(-50%, -50%);
-  transition: 0.8 ease-in-out;
-}
-
-.service:hover .service-details {
-  opacity: 1;
-  visibility: visible;
-  bottom: 0px;
-  transform: translateY(0%);
-  border-top: 1px solid turquoise;
-  transition: 0.8s;
+.icon i {
+  font-size: 50px;
+  color: lightgray;
+  margin-bottom: 10px;
 }
 
 .footer {
@@ -360,17 +264,33 @@ body {
 
 .footer a {
   text-decoration: none;
-  color: crimson;
 }
 
 .footer a i {
   margin-left: 20px;
   font-size: 20px;
+  color: rgb(150, 150, 150);
 }
 
 .footer a i:hover {
   transform: rotate(360deg);
+  color: rgba(183, 59, 255, 1);
   transition: 0.8s;
+}
+
+.skill-container {
+  margin-bottom: 20px;
+}
+
+.skill {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 0.5px solid lightgray;
+}
+.skill-name {
+  margin-right: 10px;
 }
 
 @keyframes uprise {
@@ -462,16 +382,12 @@ body {
 
 @media screen and (max-width: 1200px) {
   .header-title {
-    font-size: 80px;
+    font-size: 40px;
     text-align: left;
   }
 
   .introduction {
     flex-direction: column;
-  }
-
-  .service {
-    margin-bottom: 36px;
   }
 }
 
@@ -479,6 +395,10 @@ body {
   .img-container {
     height: 150px;
     width: 150px;
+  }
+
+  .skill {
+    flex-direction: column;
   }
 
   .header-title {
@@ -499,10 +419,6 @@ body {
   }
 
   .img-container {
-    position: relative;
-    top: 0%;
-    left: 50%;
-    transform: translateX(-50%);
     min-height: 250px;
     min-width: 250px;
   }
