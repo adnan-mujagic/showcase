@@ -151,7 +151,6 @@ body {
 .img-container {
   height: 250px;
   width: 250px;
-  border-radius: 10px;
   overflow: hidden;
   margin-bottom: 10px;
   background-image: url("imgs/userpic.jpg");
@@ -254,13 +253,13 @@ body {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  margin-bottom: 20px;
 }
 
 .service-card {
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0px 0px 24px 0px rgba(33, 33, 33, 0.274);
-  margin-bottom: 20px;
 }
 
 .service-title {
@@ -412,8 +411,9 @@ body {
 
 @media screen and (max-width: 500px) {
   .img-container {
-    height: 150px;
-    width: 150px;
+    width: 100%;
+    height: inherit;
+    aspect-ratio: 1;
   }
 
   .skill {
