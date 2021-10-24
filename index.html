@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <title>Adnan Mujagic</title>
     <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js" integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -152,6 +153,9 @@
             </div>
 
         </div>
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
         <div class="contact">
             <div style="font-weight:bold; margin-bottom:20px">Contact & Inquiries</div>
             <div class="contact">adnanmujagic@outlook.com</div>
@@ -164,6 +168,94 @@
         </div>
         
     </div>
+    <script>
+
+        async function getCommits(){
+            const res = await fetchData("/users/adnan-mujagic/repos", "GET")
+
+            let commitInfo = [];
+            for(let i=0; i<res.length; i++){
+                const commit = await fetchData("/repos/adnan-mujagic/"+res[i].name+"/commits?per_page=100");
+                let filteredCommits = []
+                for(let j=0;j<commit.length;j++){
+                    if(commit[j].author.login=="adnan-mujagic"){
+                        filteredCommits.push(commit[j]);
+                    }
+                }
+                commitInfo.push({project: res[i].name, data: filteredCommits})
+                
+            }
+            console.log(commitInfo)
+
+            let labels = [];
+            let count = [];
+            commitInfo.forEach(commit => {
+                labels.push(commit.project);
+                count.push(commit.data.length);
+            })
+
+            const data = {
+                labels,
+                datasets:[{
+                    label: "Commits Across Different Projects",
+                    backgroundColor: 'rgb(255, 99, 132)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: count,
+                }]
+            }
+
+            const config = {
+                type: 'line',
+                data: data,
+                options: {}
+            };
+
+            const myChart = new Chart(
+                document.getElementById('myChart'),
+                config
+            );
+        }
+        
+        /*const labels = [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+        ];
+        const data = {
+        labels: labels,
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45],
+        }]
+        };
+        const config = {
+            type: 'line',
+            data: data,
+            options: {}
+        };*/
+
+        
+
+        async function fetchData(suffix, method){
+            let baseUrl = "https://api.github.com";
+            const res = await fetch(baseUrl + suffix, {
+                method,
+                headers:{
+                    "Accept" : "application/vnd.github.v3+json"
+                }
+            })
+            const data = await res.json();
+            return data;
+        }
+
+        getCommits()
+
+    </script>
     
 
 </body>

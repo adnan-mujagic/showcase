@@ -1,3 +1,5 @@
+
+
 console.log("Hello, connected")
 
 let apiPrefix = "https://api.github.com"
@@ -75,6 +77,7 @@ function getColorForLanguage(language){
         return "rgb(255, 82, 3)"
     }
 }
+
 
 getProjects();
 

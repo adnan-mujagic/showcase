@@ -344,6 +344,10 @@ body {
   color: rgb(100, 100, 100);
 }
 
+#myChart {
+  margin-bottom: 20px;
+}
+
 .project-lang {
   position: absolute;
   left: 10px;
