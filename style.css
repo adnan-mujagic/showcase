@@ -311,6 +311,52 @@ body {
   margin-right: 10px;
 }
 
+.projects-container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  margin-bottom: 20px;
+}
+
+.project {
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 24px 0px rgba(33, 33, 33, 0.274);
+  height: 110px;
+  cursor: pointer;
+  position: relative;
+}
+
+.language-color-indicator {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+}
+
+.project-title {
+  color: rgb(32, 32, 32);
+  font-size: 20px;
+}
+
+.project-description {
+  margin-top: 10px;
+  font-size: 15px;
+  color: rgb(100, 100, 100);
+}
+
+.project-lang {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.project-language-name {
+  font-size: 15px;
+  margin-left: 10px;
+}
+
 @keyframes uprise {
   0% {
   }
