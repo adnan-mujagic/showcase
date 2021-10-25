@@ -209,7 +209,17 @@
             const config = {
                 type: 'doughnut',
                 data: data,
-                options: {}
+                options: {
+                    plugins:{
+                        legend:{
+                            align:"start",
+                            labels:{
+                                boxWidth: 20,
+                                padding:5
+                            }
+                        }
+                    }
+                }
             };
 
             const myChart = new Chart(
