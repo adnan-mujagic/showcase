@@ -189,23 +189,25 @@
 
             let labels = [];
             let count = [];
+            let bgColors = []
             commitInfo.forEach(commit => {
                 labels.push(commit.project);
                 count.push(commit.data.length);
+                bgColors.push(getRandomColor());
             })
 
             const data = {
                 labels,
                 datasets:[{
                     label: "Commits Across Different Projects",
-                    backgroundColor: 'rgb(255, 99, 132)',
-                    borderColor: 'rgb(255, 99, 132)',
+                    backgroundColor: bgColors,
+                    borderColor: 'rgba(255, 36, 247, 1)',
                     data: count,
                 }]
             }
 
             const config = {
-                type: 'line',
+                type: 'doughnut',
                 data: data,
                 options: {}
             };
@@ -216,31 +218,6 @@
             );
         }
         
-        /*const labels = [
-            'January',
-            'February',
-            'March',
-            'April',
-            'May',
-            'June',
-        ];
-        const data = {
-        labels: labels,
-        datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45],
-        }]
-        };
-        const config = {
-            type: 'line',
-            data: data,
-            options: {}
-        };*/
-
-        
-
         async function fetchData(suffix, method){
             let baseUrl = "https://api.github.com";
             const res = await fetch(baseUrl + suffix, {
@@ -251,6 +228,15 @@
             })
             const data = await res.json();
             return data;
+        }
+
+        function getRandomColor(){
+            let r, g, b, a;
+            r = Math.floor(Math.random()*255);
+            g = Math.floor(Math.random()*255);
+            b = Math.floor(Math.random()*255);
+            a = 0.5;
+            return "rgba(" + r + "," + g + "," + b + "," + a +")"
         }
 
         getCommits()
